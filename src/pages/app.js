@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorMessage = document.getElementById('errorMessage');
 
    
-const API_ENDPOINT = process.env.WORKER_URL || 'https://chillyapp.pages.dev';
+const API_ENDPOINT = process.env.WORKER_URL || 'https://chilly-script-generator.chillyapp.workers.dev/';
 
 
     const showError = (message) => {
