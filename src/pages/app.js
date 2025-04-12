@@ -8,8 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const resetButton = document.getElementById('resetButton');
     const errorMessage = document.getElementById('errorMessage');
 
-    // API endpoint - update this with your Cloudflare Worker URL
-    const API_ENDPOINT = 'http://localhost:8787';
+   
+const API_ENDPOINT = process.env.WORKER_URL || 'https://chillyapp.pages.dev';
+
 
     const showError = (message) => {
         errorMessage.textContent = message;
