@@ -1,0 +1,11 @@
+name = "chilly-script-generator"
+main = "src/worker/script-generator.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+ENVIRONMENT = "production"
+
+# Add your domain
+routes = [
+  { pattern = "api.chillyapp.com", custom_domain = true }
+]

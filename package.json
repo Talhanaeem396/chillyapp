@@ -1,0 +1,14 @@
+{
+  "name": "chilly",
+  "version": "1.0.0",
+  "description": "Cold Call Script Generator",
+  "scripts": {
+    "deploy:worker": "wrangler deploy",
+    "deploy:pages": "wrangler pages deploy src/pages",
+    "dev:worker": "wrangler dev",
+    "dev:pages": "wrangler pages dev src/pages"
+  },
+  "dependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

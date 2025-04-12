@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chilly - Cold Call Script Generator</title>
+    <link href="./styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Chilly - Cold Call Script Generator</h1>
+        
+        <form id="scriptForm" class="form-container">
+            <!-- Caller Information -->
+            <div class="mb-6">
+                <h2>Caller Information</h2>
+                <div class="mb-4">
+                    <label for="callerName">Your Name</label>
+                    <input type="text" id="callerName" required>
+                </div>
+                <div class="mb-4">
+                    <label for="callerTitle">Your Title</label>
+                    <input type="text" id="callerTitle" required placeholder="e.g., Sales Development Representative">
+                </div>
+                <div class="mb-4">
+                    <label for="callerCompany">Your Company</label>
+                    <input type="text" id="callerCompany" required>
+                </div>
+            </div>
+
+            <!-- Prospect Information -->
+            <div class="mb-6">
+                <h2>Prospect Information</h2>
+                <div class="mb-4">
+                    <label for="prospectName">Prospect Name</label>
+                    <input type="text" id="prospectName" required>
+                </div>
+                <div class="mb-4">
+                    <label for="prospectTitle">Prospect Title</label>
+                    <input type="text" id="prospectTitle" required placeholder="e.g., CTO, Head of Marketing">
+                </div>
+                <div class="mb-4">
+                    <label for="prospectCompany">Prospect Company</label>
+                    <input type="text" id="prospectCompany" required>
+                </div>
+            </div>
+
+            <!-- Script Parameters -->
+            <div class="mb-6">
+                <h2>Script Parameters</h2>
+                <div class="mb-4">
+                    <label for="industry">Industry</label>
+                    <select id="industry" required>
+                        <option value="">Select Industry</option>
+                        <option value="retail">Retail</option>
+                        <option value="fintech">Fintech</option>
+                        <option value="technology">Technology</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="manufacturing">Manufacturing</option>
+                        <option value="education">Education</option>
+                        <option value="professional_services">Professional Services</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="tone">Conversation Tone</label>
+                    <select id="tone" required>
+                        <option value="">Select Tone</option>
+                        <option value="friendly">Friendly</option>
+                        <option value="direct">Direct</option>
+                        <option value="consultative">Consultative</option>
+                        <option value="professional">Professional</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="painPoint">Main Pain Point</label>
+                    <select id="painPoint" required>
+                        <option value="">Select Pain Point</option>
+                        <option value="efficiency">Operational Efficiency</option>
+                        <option value="costs">Cost Management</option>
+                        <option value="growth">Growth Challenges</option>
+                        <option value="competition">Market Competition</option>
+                        <option value="technology">Technology Integration</option>
+                        <option value="security">Security Concerns</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="currentSolution">Current Solution (if known)</label>
+                    <input type="text" id="currentSolution" placeholder="Optional">
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex gap-4">
+                <button type="submit" class="button button-primary">Generate Script</button>
+                <button type="button" id="resetButton" class="button button-secondary">Reset</button>
+            </div>
+        </form>
+
+        <!-- Loading State -->
+        <div id="loadingState" class="loading hidden">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Generating your personalized script...</p>
+        </div>
+
+        <!-- Script Output -->
+        <div id="scriptOutput" class="hidden">
+            <div id="scriptContent"></div>
+            <div class="flex gap-4 mt-4">
+                <button id="copyButton" class="button button-secondary">Copy to Clipboard</button>
+                <button id="printButton" class="button button-secondary">Print Script</button>
+            </div>
+        </div>
+
+        <!-- Error Message -->
+        <div id="errorMessage" class="error-message hidden"></div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
