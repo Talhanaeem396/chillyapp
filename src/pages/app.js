@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorMessage = document.getElementById('errorMessage');
 
     // Update this with your actual Cloudflare Worker URL
-    const API_ENDPOINT = 'https://script-generator.talhanaeem396.workers.dev';
+    const API_ENDPOINT = 'https://chilly-script-generator.chillyapp.workers.dev/';
 
     const showError = (message) => {
         errorMessage.textContent = message;
