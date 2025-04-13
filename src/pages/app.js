@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const resetButton = document.getElementById('resetButton');
     const errorMessage = document.getElementById('errorMessage');
 
-    // API endpoint - update this with your Cloudflare Worker URL
-    const API_ENDPOINT = 'https://chilly-script-generator.chillyapp.workers.dev';
+    // Update this with your actual Cloudflare Worker URL
+    const API_ENDPOINT = 'https://script-generator.talhanaeem396.workers.dev';
 
     const showError = (message) => {
         errorMessage.textContent = message;
@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 },
                 body: JSON.stringify(formData)
             });
@@ -183,4 +184,25 @@ document.addEventListener('DOMContentLoaded', () => {
     printButton.addEventListener('click', () => {
         window.print();
     });
+
+    // Add API health check
+    const checkApiHealth = async () => {
+        try {
+            const response = await fetch(API_ENDPOINT, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            });
+            if (!response.ok) {
+                console.warn('API health check failed:', response.status);
+            }
+        } catch (error) {
+            console.error('API connection error:', error);
+        }
+    };
+
+    // Run API health check when page loads
+    checkApiHealth();
 });
